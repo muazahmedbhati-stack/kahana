@@ -1,0 +1,1 @@
+{"name":"khan-restaurant","version":"1.0.1","private":true,"description":"Khan Restaurant static website, ready for Vercel","scripts":{"dev":"node server.cjs","build":"node build.cjs","check":"node --check app.js"}}

@@ -1,0 +1,10 @@
+// Publish only browser assets. The local preview server is never deployed.
+const fs = require('node:fs');
+const path = require('node:path');
+const output = path.join(__dirname, 'public');
+fs.mkdirSync(output, { recursive: true });
+for (const file of ['index.html', 'style.css', 'app.js']) {
+  fs.copyFileSync(path.join(__dirname, file), path.join(output, file));
+}
+fs.cpSync(path.join(__dirname, 'assets'), path.join(output, 'assets'), { recursive: true });
+console.log('Static site built in public/ (HTML, CSS, JavaScript and images only).');
